@@ -1,6 +1,9 @@
+.venv/
 __pycache__/
 *.pyc
 *.jpg
 *.ogg
 *.mp4
 *.pdf
+.env
+temporal/

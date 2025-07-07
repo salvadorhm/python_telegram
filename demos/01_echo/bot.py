@@ -1,6 +1,10 @@
 from telegram import ForceReply, Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes, MessageHandler, filters
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
+token=os.getenv("TELEGRAM_API_KEY")
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     """Send a message when the command /start is issued."""
@@ -24,7 +28,7 @@ async def echo(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 
 if __name__ == "__main__":
     # Reemplaza 'TU_TOKEN' con el token real de tu bot
-    app = ApplicationBuilder().token("TU_TOKEN").build()
+    app = ApplicationBuilder().token(token).build()
 
     # on different commands - answer in Telegram
     app.add_handler(CommandHandler("start", start))
