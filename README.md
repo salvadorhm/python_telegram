@@ -2,11 +2,48 @@
 
 Demos del uso de la libreria python-telegram-bot
 
-## 1. Instalación de las librerias
+## 1. Requisitos
 
-````bash
+Si se desea ejecutar la aplicacion en un entorno de desarrollo, se recomienda utilizar un entorno virtual. Para crear un entorno virtual, se puede utilizar el siguiente comando:
+
+```bash
+python3 -m venv .venv
+```
+
+Para activar el entorno virtual, se puede utilizar el siguiente comando:
+
+```bash
+source .venv/bin/activate
+```
+
+En el caso de Windows, el comando para activar el entorno virtual es:
+
+```bash
+.venv\Scripts\Activate.ps1
+```
+
+o
+
+```bash
+.venv\Scripts\activate.bat
+```
+
+Nota: es problable que se necesite ejecutar el siguiente comando para permitir la ejecucion de scripts en PowerShell:
+
+```bash
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+o
+
+```bash
+Set-ExecutionPolicy Unrestricted -Scope Process
+```
+
+Para instalar las dependencias necesarias, se puede utilizar el siguiente comando:
+
+```bash
 pip install -r requirements.txt
-````
+```
 
 ## 2. Ejecución de los bots
 
