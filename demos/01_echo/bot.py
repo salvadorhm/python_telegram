@@ -1,3 +1,4 @@
+import logging
 from telegram import ForceReply, Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes, MessageHandler, filters
 from dotenv import load_dotenv
@@ -5,6 +6,12 @@ import os
 
 load_dotenv()
 token=os.getenv("TELEGRAM_API_KEY")
+
+logging.basicConfig(
+    filename='bot.log',
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    level=logging.ERROR
+)
 
 async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     """Send a message when the command /start is issued."""

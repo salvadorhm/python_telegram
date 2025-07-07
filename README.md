@@ -1,6 +1,6 @@
 # Python Telegram
 
-Demos del uso de la libreria python-telegram-bot
+Demos del uso de la libreria [python-telegram-bot](https://python-telegram-bot.org/)
 
 ## 1. Requisitos
 
