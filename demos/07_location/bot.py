@@ -1,6 +1,29 @@
-from telegram import Update
-from telegram.ext import ApplicationBuilder, MessageHandler, filters, ContextTypes
+from telegram import ForceReply, Update
+from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters, ContextTypes
+from dotenv import load_dotenv
 import os
+
+load_dotenv()
+token=os.getenv("TELEGRAM_API_KEY")
+
+async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    """Send a message when the command /start is issued."""
+    user = update.effective_user
+    await update.message.reply_html(
+        rf"Hi {user.mention_html()}!",
+        reply_markup=ForceReply(selective=True),
+    )
+
+
+async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    """Send a message when the command /help is issued."""
+    await update.message.reply_text("Este bot puede realizar las siguientes acciones:")
+
+
+async def echo_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    """Echo the user message."""
+    await update.message.reply_text(update.message.text)
+
 
 async def location_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """
@@ -37,8 +60,13 @@ async def location_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text("Ocurrió un error al guardar la ubicación.")
 
 if __name__ == '__main__':
-    # Reemplaza 'TU_TOKEN' con el token real de tu bot
-    app = ApplicationBuilder().token("TU_TOKEN").build()
+    # Reemplaza 'TELEGRAM_API_KEY' con el token real de tu bot en el archivo .env
+    app = ApplicationBuilder().token(token).build()
+
+    # on different commands - answer in Telegram
+    app.add_handler(CommandHandler("start", start_command))
+    app.add_handler(CommandHandler("help", help_command))
+    app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, echo_command))
 
     # Manejador para recibir ubicaciones
     app.add_handler(MessageHandler(filters.LOCATION, location_handler))
