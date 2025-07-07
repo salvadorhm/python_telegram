@@ -44,7 +44,7 @@ async def audio_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         
         # Define el nombre y la ruta donde se guardará el archivo
         # El nombre del archivo se genera con el ID del audio para evitar duplicados
-        filename = os.path.join('downloads/audios/', "audio.ogg")
+        filename = os.path.join('downloads/audios/', f"{update.message.audio.file_id}.ogg")
         
         # Crea la carpeta si no existe
         os.makedirs(os.path.dirname(filename), exist_ok=True)
