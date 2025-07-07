@@ -17,7 +17,7 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> N
 
 async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     """Send a message when the command /help is issued."""
-    await update.message.reply_text("Help!")
+    await update.message.reply_text("Este bot puede realizar las siguientes acciones:")
 
 
 async def echo_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
