@@ -51,7 +51,15 @@ pip install -r requirements.txt
 python3 bot.py
 ````
 
-## 3. Lista de demos
+## 3. Variable de entorno
+
+Crear un archivo **.env** para almacenar las variables de entorno necesarias para el proyecto, en este caso se utiliza la variable **TELEGRAM_API_KEY** para almacenar el token generado por el **@BotFather**.
+
+```bash
+TELEGRAM_API_KEY=TU_TOKEN
+```
+
+## 4. Lista de demos
 
 |No.|Carpeta|Descripción|
 |--|--|--|
@@ -62,5 +70,5 @@ python3 bot.py
 |05|05_voice|Ejemplo de como recibir un mensaje de voz y almacenarlo en una carpeta|
 |06|06_document|Ejemplo de como recibir un archivo PDF, DOCX, etc. y almacenarlo en una carpeta|
 |07|07_location|Ejemplo de como recibir una ubicación (longitud, latitud) y alamcernarla en un archivo de texto.|
-|08|08_sedfile|Ejemplo de como enviar un archivo a un usuario|
-|09|09_sendlocation|senlocation|Ejemplo de como enviar una ubicación a un usuario|
+|08|08_sedfile|Ejemplo de como enviar un archivo a un usuario usando el comando **/sendfile**|
+|09|09_sendlocation|Ejemplo de como enviar una ubicación a un usuario utlizando el comando **/sendlocation**|
