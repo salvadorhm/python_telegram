@@ -27,7 +27,7 @@ async def echo_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
 
 
 if __name__ == "__main__":
-    # Reemplaza 'TU_TOKEN' con el token real de tu bot
+    # Reemplaza 'TELEGRAM_API_KEY' con el token real de tu bot en el archivo .env
     app = ApplicationBuilder().token(token).build()
 
     # on different commands - answer in Telegram

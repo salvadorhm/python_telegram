@@ -62,7 +62,7 @@ async def audio_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 
 if __name__ == '__main__':
-    # Crea la aplicación con el token de tu bot
+    # Reemplaza 'TELEGRAM_API_KEY' con el token real de tu bot en el archivo .env
     app = ApplicationBuilder().token(token).build()
 
     # on different commands - answer in Telegram
